@@ -14,6 +14,9 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            objectPosition: {
+                'top-right': 'top right',
+            },
         },
     },
 

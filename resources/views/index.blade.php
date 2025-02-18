@@ -9,33 +9,62 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans bg-gray-100">
-    <!-- Header -->
-    <header class="flex items-center justify-between p-6 relative">
-        <div class="flex items-center">
-            <h1 class="text-xl font-bold">TASTY FOOD</h1>
-            <nav class="ml-8">
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-gray-600">HOME</a></li>
-                    <li><a href="#" class="hover:text-gray-600">TENTANG</a></li>
-                    <li><a href="#" class="hover:text-gray-600">BERITA</a></li>
-                    <li><a href="#" class="hover:text-gray-600">GALERI</a></li>
-                    <li><a href="#" class="hover:text-gray-600">KONTAK</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="absolute top-0 right-0 w-[600px] md:w-[700px] lg:w-[800px] overflow-hidden">
-            <img src="{{ asset('img/img-4-2000x2000.png') }}" alt="Tasty Food" class="w-full h-auto object-cover">
-        </div>
-    </header>
+    <!-- Navbar -->
+    <nav class="absolute top-0 left-0 w-full z-50">
+        <div class="container mx-auto flex items-center justify-between px-12 py-6">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-bold">TASTY FOOD</a>
     
-    <!-- Hero Section -->
-    <section class="relative flex items-center px-12 py-20 overflow-hidden">
-        <div class="max-w-xl">
-            <h2 class="text-5xl font-bold leading-tight">HEALTHY <span class="text-gray-700">TASTY FOOD</span></h2>
-            <p class="mt-4 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <!-- Desktop Menu (Centered) -->
+            <ul class="hidden md:flex space-x-10 mx-auto">
+                <li><a href="#" class="text-gray-700 hover:text-black">HOME</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-black">TENTANG</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-black">BERITA</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-black">GALERI</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-black">KONTAK</a></li>
+            </ul>
+    
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" 
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+    
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="absolute left-0 top-16 w-full bg-white hidden md:hidden shadow-md">
+                <ul class="flex flex-col space-y-4 p-6">
+                    <li><a href="#" class="text-gray-700 hover:text-black">HOME</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black">TENTANG</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black">BERITA</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black">GALERI</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-black">KONTAK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative w-full h-screen flex items-center">
+        <!-- Left Section: Text Content -->
+        <div class="max-w-2xl pl-12">
+            <hr class="w-16 border-black mb-4">
+            <h2 class="text-5xl font-bold leading-tight">HEALTHY <br><span class="text-gray-900">TASTY FOOD</span></h2>
+            <p class="mt-4 text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.
+            </p>
             <button class="mt-6 px-6 py-3 bg-black text-white font-semibold">TENTANG KAMI</button>
         </div>
-    </section>
+    
+        <!-- Right Section: Image -->
+        <div class="absolute top-0 right-[-10%] w-[55%] h-full overflow-hidden">
+            <img src="{{ asset('img/img-4-2000x2000.png') }}" 
+                alt="Tasty Food" 
+                class="w-full h-full object-cover object-right">
+        </div>
+
+    </header>
     
     <!-- About Section -->
     <section class="text-center py-16 bg-white">
@@ -76,5 +105,12 @@
     <footer class="bg-black text-white text-center p-6">
         <p>&copy; 2025 Tasty Food. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>
