@@ -78,22 +78,22 @@
     <section style="background-image: url('{{ asset('img/group 70@2x.png') }}');" class="py-16 bg-cover bg-center bg-no-repeat">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
-                <div class="bg-white p-4 shadow-md rounded-xl relative">
+                <div class="bg-white p-6 shadow-md rounded-xl relative">
                     <img src="{{ asset('img/img-1.png') }}" alt="Menu 1" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
                     <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                <div class="bg-white p-6 shadow-md rounded-xl relative">
                     <img src="{{ asset('img/img-2.png') }}" alt="Menu 2" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
                     <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                <div class="bg-white p-6 shadow-md rounded-xl relative">
                     <img src="{{ asset('img/img-3.png') }}" alt="Menu 3" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
                     <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                <div class="bg-white p-6 shadow-md rounded-xl relative">
                     <img src="{{ asset('img/img-4.png') }}" alt="Menu 4" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
                     <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
