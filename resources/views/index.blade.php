@@ -46,20 +46,20 @@
     </nav>
 
     <!-- Header -->
-    <header class="relative w-full h-screen flex items-center">
+    <header class="relative w-full h-screen min-h-[105vh] flex items-center">
         <div class="container mx-auto px-12 flex items-center">
             <!-- Left Section: Text Content -->
             <div class="max-w-2xl">
-                <hr class="w-16 border-2 border-black mb-4">
+                <hr class="w-24 border-2 border-x border-black mb-4">
                 <h2 class="text-6xl font-bold leading-tight">HEALTHY <br><span class="text-gray-900">TASTY FOOD</span></h2>
                 <p class="mt-6 text-lg text-gray-600">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.
                 </p>
-                <button class="mt-8 px-8 py-4 bg-black text-white text-lg font-semibold">TENTANG KAMI</button>
+                <button class="mt-8 px-20 py-4 bg-black text-white text-lg font-semibold">TENTANG KAMI</button>
             </div>
         
             <!-- Right Section: Image -->
-            <div class="absolute top-[-14%] right-[-14%] w-[55%] h-full overflow-hidden">
+            <div class="absolute top-[-16%] right-[-15%] w-[55%] h-full overflow-hidden">
                 <img src="{{ asset('img/img-4-2000x2000.png') }}" 
                     alt="Tasty Food" 
                     class="w-full h-full object-cover object-right">
@@ -70,7 +70,36 @@
     <!-- About Section -->
     <section class="text-center py-16 bg-white">
         <h2 class="text-2xl font-bold">TENTANG KAMI</h2>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, consectetur praesentium reprehenderit voluptatem exercitationem facere earum. Asperiores voluptates, natus ex rem nam veniam dolorem nulla voluptatibus molestiae, labore earum eligendi deserunt assumenda omnis magnam veritatis ipsa deleniti repellat impedit necessitatibus.</p>
+        <hr class="w-24 border-2 border-x border-black mx-auto mt-8 mb-4">
+    </section>
+
+    {{-- 4 Menu Section --}}
+    <section style="background-image: url('{{ asset('img/group 70@2x.png') }}');" class="py-16 bg-cover bg-center bg-no-repeat">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
+                <div class="bg-white p-4 shadow-md rounded-xl relative">
+                    <img src="{{ asset('img/img-1.png') }}" alt="Menu 1" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                    <h3 class="font-bold mt-24">Lorem Ipsum</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                    <img src="{{ asset('img/img-2.png') }}" alt="Menu 2" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                    <h3 class="font-bold mt-24">Lorem Ipsum</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                    <img src="{{ asset('img/img-3.png') }}" alt="Menu 3" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                    <h3 class="font-bold mt-24">Lorem Ipsum</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="bg-white p-6 shadow-md rounded-xl relative overflow-hidden">
+                    <img src="{{ asset('img/img-4.png') }}" alt="Menu 4" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                    <h3 class="font-bold mt-24">Lorem Ipsum</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- News Section -->
