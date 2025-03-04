@@ -75,28 +75,42 @@
     </section>
 
     {{-- 4 Menu Section --}}
-    <section style="background-image: url('{{ asset('img/group 70@2x.png') }}');" class="py-16 bg-cover bg-center bg-no-repeat">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-6">
-                <div class="bg-white p-6 shadow-md rounded-xl relative">
-                    <img src="{{ asset('img/img-1.png') }}" alt="Menu 1" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+    <section class="relative flex items-center justify-center h-[600px]">
+        <!-- Background Image -->
+        <img src="{{ asset('img/group 70@2x.png') }}" 
+             alt="Background" 
+             class="absolute top-0 left-0 w-full h-full object-cover">
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-6xl mx-auto px-4 flex items-center justify-center w-full h-full">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 justify-center items-center">
+                <div class="bg-white p-8 shadow-md rounded-xl relative flex flex-col items-center text-center min-h-[260px]">
+                    <img src="{{ asset('img/img-1.png') }}" 
+                        alt="Menu 1" 
+                        class="w-[80%] max-w-full h-auto object-cover absolute top-[-5rem]">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative">
-                    <img src="{{ asset('img/img-2.png') }}" alt="Menu 2" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                <div class="bg-white p-8 shadow-md rounded-xl relative flex flex-col items-center text-center min-h-[260px]">
+                    <img src="{{ asset('img/img-2.png') }}" 
+                        alt="Menu 2" 
+                        class="w-[80%] max-w-full h-auto object-cover absolute top-[-5rem]">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative">
-                    <img src="{{ asset('img/img-3.png') }}" alt="Menu 3" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                <div class="bg-white p-8 shadow-md rounded-xl relative flex flex-col items-center text-center min-h-[260px]">
+                    <img src="{{ asset('img/img-3.png') }}" 
+                        alt="Menu 3" 
+                        class="w-[80%] max-w-full h-auto object-cover absolute top-[-5rem]">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
-                <div class="bg-white p-6 shadow-md rounded-xl relative">
-                    <img src="{{ asset('img/img-4.png') }}" alt="Menu 4" class="w-full h-48 object-cover mb-4 absolute top-[-50%] left-1/2 transform -translate-x-1/2">
+                <div class="bg-white p-8 shadow-md rounded-xl relative flex flex-col items-center text-center min-h-[260px]">
+                    <img src="{{ asset('img/img-4.png') }}" 
+                        alt="Menu 4" 
+                        class="w-[80%] max-w-full h-auto object-cover absolute top-[-5rem]">
                     <h3 class="font-bold mt-24">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </div>
         </div>
@@ -132,8 +146,63 @@
     </section>
     
     <!-- Footer -->
-    <footer class="bg-black text-white text-center p-6">
-        <p>&copy; 2025 Tasty Food. All rights reserved.</p>
+    <footer class="bg-zinc-900 text-white py-10">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Left Section -->
+            <div>
+                <h2 class="text-xl font-bold">Tasty Food</h2>
+                <p class="mt-2 text-gray-400">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class=""><img src="{{ asset('img/001-facebook.png') }}" alt=""></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
+                        <i class=""><img src="{{ asset('img/002-twitter.png') }}" alt=""></i>
+                    </a>
+                </div>
+            </div>
+    
+            <!-- Middle left Section -->
+            <div class="flex flex-col space-y-2">
+                <h3 class="text-lg font-semibold">Useful Links</h3>
+                <a href="#" class="text-gray-400 hover:text-white">Blog</a>
+                <a href="#" class="text-gray-400 hover:text-white">Hewan</a>
+                <a href="#" class="text-gray-400 hover:text-white">Galeri</a>
+                <a href="#" class="text-gray-400 hover:text-white">Testimonial</a>
+            </div>
+
+            <!-- Middle right Section -->
+            <div class="flex flex-col space-y-2">
+                <h3 class="text-lg font-semibold">Privacy</h3>
+                <a href="#" class="text-gray-400 hover:text-white">Karir</a>
+                <a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a>
+                <a href="#" class="text-gray-400 hover:text-white">Kontak Kami</a>
+                <a href="#" class="text-gray-400 hover:text-white">Servis</a>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="flex flex-col space-y-2">
+                <h3 class="text-lg font-semibold">Contact Info</h3>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                    <img src="{{ asset('img/Group 66.png') }}" alt="" class="w-10 h-10">
+                    <p class="text-gray-400">tastyfood@gmail.com</p>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                    <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
+                    <p class="text-gray-400">+62 812 3456 7890</p>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                    <img src="{{ asset('img/Group 68.png') }}" alt="" class="w-10 h-10">
+                    <p class="text-gray-400">Kota Bandung, Jawa Barat</p>
+                </a>
+            </div>
+        </div>
+    
+        <div class="mt-8 text-center pt-4">
+            <p class="text-gray-500">Copyright &copy; 2025 All rights reserved</p>
+        </div>
     </footer>
 
     <script>
