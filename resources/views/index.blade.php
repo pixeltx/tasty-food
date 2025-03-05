@@ -117,21 +117,56 @@
     </section>
 
     <!-- News Section -->
-    <section class="py-16">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center mb-6">BERITA KAMI</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 shadow-md">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">BERITA KAMI</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Large Left News Card -->
+                <div class="lg:col-span-1 bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/news-1.jpg') }}" alt="News 1" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl">Judul Berita Utama</h3>
+                        <p class="text-gray-600 text-sm mt-2">Deskripsi lebih panjang untuk berita utama yang lebih menarik dan mendetail.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-md">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="bg-white p-6 shadow-md">
-                    <h3 class="font-bold">Lorem Ipsum</h3>
-                    <p class="text-gray-600">Lorem ipsum dolor sit amet.</p>
+    
+                <!-- Right Side (4 Smaller Cards in 2x2 Grid) -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Small News Card 1 -->
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <img src="{{ asset('img/news-2.jpg') }}" alt="News 2" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg">Judul Berita 2</h3>
+                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Small News Card 2 -->
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <img src="{{ asset('img/news-3.jpg') }}" alt="News 3" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg">Judul Berita 3</h3>
+                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Small News Card 3 -->
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <img src="{{ asset('img/news-4.jpg') }}" alt="News 4" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg">Judul Berita 4</h3>
+                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Small News Card 4 -->
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                        <img src="{{ asset('img/news-5.jpg') }}" alt="News 5" class="w-full h-40 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg">Judul Berita 5</h3>
+                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,37 +200,37 @@
             </div>
     
             <!-- Middle left Section -->
-            <div class="flex flex-col space-y-2">
+            <div class="flex text-white flex-col space-y-2">
                 <h3 class="text-lg font-semibold">Useful Links</h3>
-                <a href="#" class="text-gray-400 hover:text-white">Blog</a>
-                <a href="#" class="text-gray-400 hover:text-white">Hewan</a>
-                <a href="#" class="text-gray-400 hover:text-white">Galeri</a>
-                <a href="#" class="text-gray-400 hover:text-white">Testimonial</a>
+                <a href="#" class="hover:text-gray-100">Blog</a>
+                <a href="#" class="hover:text-gray-100">Hewan</a>
+                <a href="#" class="hover:text-gray-100">Galeri</a>
+                <a href="#" class="hover:text-gray-100">Testimonial</a>
             </div>
 
             <!-- Middle right Section -->
-            <div class="flex flex-col space-y-2">
+            <div class="flex text-white flex-col space-y-2">
                 <h3 class="text-lg font-semibold">Privacy</h3>
-                <a href="#" class="text-gray-400 hover:text-white">Karir</a>
-                <a href="#" class="text-gray-400 hover:text-white">Tentang Kami</a>
-                <a href="#" class="text-gray-400 hover:text-white">Kontak Kami</a>
-                <a href="#" class="text-gray-400 hover:text-white">Servis</a>
+                <a href="#" class="hover:text-gray-100">Karir</a>
+                <a href="#" class="hover:text-gray-100">Tentang Kami</a>
+                <a href="#" class="hover:text-gray-100">Kontak Kami</a>
+                <a href="#" class="hover:text-gray-100">Servis</a>
             </div>
     
             <!-- Right Section -->
-            <div class="flex flex-col space-y-2">
+            <div class="flex text-white flex-col space-y-2">
                 <h3 class="text-lg font-semibold">Contact Info</h3>
-                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
                     <img src="{{ asset('img/Group 66.png') }}" alt="" class="w-10 h-10">
-                    <p class="text-gray-400">tastyfood@gmail.com</p>
+                    <p class="">tastyfood@gmail.com</p>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
                     <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
-                    <p class="text-gray-400">+62 812 3456 7890</p>
+                    <p class="">+62 812 3456 7890</p>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-white flex items-center space-x-2">
+                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
                     <img src="{{ asset('img/Group 68.png') }}" alt="" class="w-10 h-10">
-                    <p class="text-gray-400">Kota Bandung, Jawa Barat</p>
+                    <p class="">Kota Bandung, Jawa Barat</p>
                 </a>
             </div>
         </div>
