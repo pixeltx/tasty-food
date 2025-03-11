@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Laravel') }} - Home</title>
+    <title>Home | {{ config('app.name', 'Laravel') }}</title>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -120,51 +120,107 @@
     <section class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-10">BERITA KAMI</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Large Left News Card -->
-                <div class="lg:col-span-1 bg-white shadow-md rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/news-1.jpg') }}" alt="News 1" class="w-full h-80 object-cover">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Big News Card - 50% width -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}" alt="News 1" class="w-full h-96 object-cover">
                     <div class="p-6">
-                        <h3 class="font-semibold text-xl">Judul Berita Utama</h3>
-                        <p class="text-gray-600 text-sm mt-2">Deskripsi lebih panjang untuk berita utama yang lebih menarik dan mendetail.</p>
+                        <h3 class="font-semibold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, tenetur amet eaque placeat expedita veniam!</h3>
+                        <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur nobis accusantium, beatae voluptas, voluptates dolores velit, quis quod pariatur veniam sint id dicta blanditiis enim. Vel consequuntur deserunt provident.</p>
+                        
+                        <!-- Baca Selengkapnya + Circles -->
+                        <div class="flex items-center mt-80 space-x-4 justify-between">
+                            <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
+                        
+                            <!-- Single Button for 3 Circles -->
+                            <a href="/news" class="flex space-x-2">
+                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
     
-                <!-- Right Side (4 Smaller Cards in 2x2 Grid) -->
-                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Right Side: 4 Small News Cards - 50% width -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Small News Card 1 -->
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/news-2.jpg') }}" alt="News 2" class="w-full h-40 object-cover">
+                        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" alt="News 2" class="w-full h-40 object-cover">
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg">Judul Berita 2</h3>
-                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                            <div class="flex items-center mt-32 space-x-4 justify-between">
+                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
+                            
+                                <!-- Single Button for 3 Circles -->
+                                <a href="/news" class="flex space-x-2">
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
     
                     <!-- Small News Card 2 -->
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/news-3.jpg') }}" alt="News 3" class="w-full h-40 object-cover">
+                        <img src="{{ asset('img/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg') }}" alt="News 3" class="w-full h-40 object-cover">
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg">Judul Berita 3</h3>
-                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                            <div class="flex items-center mt-32 space-x-4 justify-between">
+                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
+                            
+                                <!-- Single Button for 3 Circles -->
+                                <a href="/news" class="flex space-x-2">
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
     
                     <!-- Small News Card 3 -->
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/news-4.jpg') }}" alt="News 4" class="w-full h-40 object-cover">
+                        <img src="{{ asset('img/jimmy-dean-Jvw3pxgeiZw-unsplash.jpg') }}" alt="News 4" class="w-full h-40 object-cover">
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg">Judul Berita 4</h3>
-                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                            <div class="flex items-center mt-32 space-x-4 justify-between">
+                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
+                            
+                                <!-- Single Button for 3 Circles -->
+                                <a href="/news" class="flex space-x-2">
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
     
                     <!-- Small News Card 4 -->
                     <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/news-5.jpg') }}" alt="News 5" class="w-full h-40 object-cover">
+                        <img src="{{ asset('img/luisa-brimble-HvXEbkcXjSk-unsplash.jpg') }}" alt="News 5" class="w-full h-40 object-cover">
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg">Judul Berita 5</h3>
-                            <p class="text-gray-600 text-sm mt-2">Deskripsi singkat berita menarik.</p>
+                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+                            <div class="flex items-center mt-32 space-x-4 justify-between">
+                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
+                            
+                                <!-- Single Button for 3 Circles -->
+                                <a href="/news" class="flex space-x-2">
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -173,10 +229,33 @@
     </section>
     
     <!-- Gallery Section -->
-    <section class="py-16">
-        <h2 class="text-2xl font-bold text-center">GALERI KAMI</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6">
-            <img src="" alt="">
+    <section class="py-10 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/brooke-lark-oaz0raysASk-unsplash.jpg') }}" alt="Gallery Image 1" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/ella-olsson-mmnKI8kMxpc-unsplash.jpg') }}" alt="Gallery Image 2" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg') }}" alt="Gallery Image 3" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/jonathan-borba-Gkc_xM3VY34-unsplash.jpg') }}" alt="Gallery Image 4" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/mariana-medvedeva-iNwCO9ycBlc-unsplash.jpg') }}" alt="Gallery Image 5" class="w-full h-64 object-cover">
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('img/monika-grabkowska-P1aohbiT-EY-unsplash.jpg') }}" alt="Gallery Image 6" class="w-full h-64 object-cover">
+                </div>
+            </div>
+    
+            <button class="bg-black py-2 px-12 my-12 block mx-auto text-white hover:bg-gray-800">
+                LIHAT LEBIH BANYAK
+            </button>
         </div>
     </section>
     
