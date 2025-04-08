@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home | {{ config('app.name', 'Laravel') }}</title>
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-<body class="font-sans bg-gray-100 overflow-x-hidden">
-    <!-- Navbar -->
+<x-app>
+    {{-- Navbar --}}
     <nav class="absolute top-10 left-0 w-full z-50 py-6 px-12">
         <div class="container mx-auto flex items-center justify-start">
             <!-- Logo -->
@@ -17,11 +7,11 @@
     
             <!-- Desktop Menu (Aligned Left & Bigger) -->
             <ul class="hidden md:flex space-x-14 text-xl">
-                <li><a href="#" class="text-gray-700 hover:text-black font-semibold">HOME</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-black font-semibold">TENTANG</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-black font-semibold">BERITA</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-black font-semibold">GALERI</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-black font-semibold">KONTAK</a></li>
+                <li><a href="/" class="text-gray-700 hover:text-black font-semibold">HOME</a></li>
+                <li><a href="/about" class="text-gray-700 hover:text-black font-semibold">TENTANG</a></li>
+                <li><a href="/blog" class="text-gray-700 hover:text-black font-semibold">BERITA</a></li>
+                <li><a href="/gallery" class="text-gray-700 hover:text-black font-semibold">GALERI</a></li>
+                <li><a href="/contact" class="text-gray-700 hover:text-black font-semibold">KONTAK</a></li>
             </ul>
     
             <!-- Mobile Menu Button -->
@@ -35,16 +25,15 @@
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="absolute left-0 top-20 w-full bg-white hidden md:hidden shadow-md">
                 <ul class="flex flex-col space-y-4 p-6">
-                    <li><a href="#" class="text-gray-700 hover:text-black font-semibold">HOME</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-black font-semibold">TENTANG</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-black font-semibold">BERITA</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-black font-semibold">GALERI</a></li>
-                    <li><a href="#" class="text-gray-700 hover:text-black font-semibold">KONTAK</a></li>
+                    <li><a href="/" class="text-gray-700 hover:text-black font-semibold">HOME</a></li>
+                    <li><a href="/about" class="text-gray-700 hover:text-black font-semibold">TENTANG</a></li>
+                    <li><a href="/blog" class="text-gray-700 hover:text-black font-semibold">BERITA</a></li>
+                    <li><a href="/gallery" class="text-gray-700 hover:text-black font-semibold">GALERI</a></li>
+                    <li><a href="/contact" class="text-gray-700 hover:text-black font-semibold">KONTAK</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Header -->
     <header class="relative w-full h-screen min-h-[105vh] flex items-center">
         <div class="container mx-auto px-12 flex items-center">
@@ -258,72 +247,5 @@
             </button>
         </div>
     </section>
-    
-    <!-- Footer -->
-    <footer class="bg-zinc-900 text-white py-10">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Left Section -->
-            <div>
-                <h2 class="text-xl font-bold">Tasty Food</h2>
-                <p class="mt-2 text-gray-400">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <div class="flex space-x-4 mt-4">
-                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
-                        <i class=""><img src="{{ asset('img/001-facebook.png') }}" alt=""></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white text-2xl">
-                        <i class=""><img src="{{ asset('img/002-twitter.png') }}" alt=""></i>
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Middle left Section -->
-            <div class="flex text-white flex-col space-y-2">
-                <h3 class="text-lg font-semibold">Useful Links</h3>
-                <a href="#" class="hover:text-gray-100">Blog</a>
-                <a href="#" class="hover:text-gray-100">Hewan</a>
-                <a href="#" class="hover:text-gray-100">Galeri</a>
-                <a href="#" class="hover:text-gray-100">Testimonial</a>
-            </div>
+</x-app>
 
-            <!-- Middle right Section -->
-            <div class="flex text-white flex-col space-y-2">
-                <h3 class="text-lg font-semibold">Privacy</h3>
-                <a href="#" class="hover:text-gray-100">Karir</a>
-                <a href="#" class="hover:text-gray-100">Tentang Kami</a>
-                <a href="#" class="hover:text-gray-100">Kontak Kami</a>
-                <a href="#" class="hover:text-gray-100">Servis</a>
-            </div>
-    
-            <!-- Right Section -->
-            <div class="flex text-white flex-col space-y-2">
-                <h3 class="text-lg font-semibold">Contact Info</h3>
-                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
-                    <img src="{{ asset('img/Group 66.png') }}" alt="" class="w-10 h-10">
-                    <p class="">tastyfood@gmail.com</p>
-                </a>
-                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
-                    <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
-                    <p class="">+62 812 3456 7890</p>
-                </a>
-                <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
-                    <img src="{{ asset('img/Group 68.png') }}" alt="" class="w-10 h-10">
-                    <p class="">Kota Bandung, Jawa Barat</p>
-                </a>
-            </div>
-        </div>
-    
-        <div class="mt-8 text-center pt-4">
-            <p class="text-gray-500">Copyright &copy; 2025 All rights reserved</p>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
-    </script>
-</body>
-</html>
