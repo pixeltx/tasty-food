@@ -35,7 +35,7 @@
         </div>
     </nav>
     <!-- Header -->
-    <header class="relative w-full h-screen min-h-[105vh] flex items-center">
+    <header class="relative w-full h-screen min-h-[105vh] flex items-center bg-gray-100">
         <div class="container mx-auto px-12 flex items-center">
             <!-- Left Section: Text Content -->
             <div class="max-w-2xl">
@@ -109,19 +109,19 @@
     <section class="py-16 bg-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-10">BERITA KAMI</h2>
+    
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <!-- Big News Card - 50% width -->
-                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                <!-- Big News Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col max-h-[700px]">
                     <img src="{{ asset('img/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}" alt="News 1" class="w-full h-96 object-cover">
-                    <div class="p-6">
-                        <h3 class="font-semibold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, tenetur amet eaque placeat expedita veniam!</h3>
-                        <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur nobis accusantium, beatae voluptas, voluptates dolores velit, quis quod pariatur veniam sint id dicta blanditiis enim. Vel consequuntur deserunt provident.</p>
-                        
-                        <!-- Baca Selengkapnya + Circles -->
-                        <div class="flex items-center mt-80 space-x-4 justify-between">
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-semibold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, tenetur amet eaque placeat expedita veniam!</h3>
+                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur nobis accusantium, beatae voluptas, voluptates dolores velit, quis quod pariatur veniam sint id dicta blanditiis enim. Vel consequuntur deserunt provident.</p>
+                        </div>
+    
+                        <div class="flex items-center mt-6 space-x-4 justify-between">
                             <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                        
-                            <!-- Single Button for 3 Circles -->
                             <a href="/news" class="flex space-x-2">
                                 <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
                                 <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
@@ -131,39 +131,19 @@
                     </div>
                 </div>
     
-                <!-- Right Side: 4 Small News Cards - 50% width -->
+                <!-- Right Side: 4 Small News Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Small News Card 1 -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" alt="News 2" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                            <div class="flex items-center mt-32 space-x-4 justify-between">
-                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                            
-                                <!-- Single Button for 3 Circles -->
-                                <a href="/news" class="flex space-x-2">
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                </a>
+                    @foreach ([2, 3, 4, 5] as $i)
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col max-h-[450px]">
+                        <img src="{{ asset("img/news-$i.jpg") }}" alt="News {{ $i }}" class="w-full h-40 object-cover">
+                        <div class="p-4 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                                <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             </div>
-                        </div>
-                    </div>
     
-                    <!-- Small News Card 2 -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg') }}" alt="News 3" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                            <div class="flex items-center mt-32 space-x-4 justify-between">
+                            <div class="flex items-center mt-4 space-x-4 justify-between">
                                 <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                            
-                                <!-- Single Button for 3 Circles -->
                                 <a href="/news" class="flex space-x-2">
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
@@ -172,53 +152,14 @@
                             </div>
                         </div>
                     </div>
-    
-                    <!-- Small News Card 3 -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/jimmy-dean-Jvw3pxgeiZw-unsplash.jpg') }}" alt="News 4" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                            <div class="flex items-center mt-32 space-x-4 justify-between">
-                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                            
-                                <!-- Single Button for 3 Circles -->
-                                <a href="/news" class="flex space-x-2">
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Small News Card 4 -->
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                        <img src="{{ asset('img/luisa-brimble-HvXEbkcXjSk-unsplash.jpg') }}" alt="News 5" class="w-full h-40 object-cover">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-
-                            <div class="flex items-center mt-32 space-x-4 justify-between">
-                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                            
-                                <!-- Single Button for 3 Circles -->
-                                <a href="/news" class="flex space-x-2">
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Gallery Section -->
-    <section class="py-10 bg-gray-100">
+    <section class="py-10 bg-white">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-6">Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

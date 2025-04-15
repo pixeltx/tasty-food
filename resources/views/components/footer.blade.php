@@ -1,17 +1,17 @@
 <footer class="bg-zinc-900 text-white py-10">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div class="max-w-7xl mx-auto px-4 pt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Left Section -->
         <div>
             <h2 class="text-xl font-bold">Tasty Food</h2>
             <p class="mt-2 text-gray-400">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <div class="flex space-x-4 mt-4">
+            <div class="flex space-x-4 mt-6">
                 <a href="#" class="text-gray-400 hover:text-white text-2xl">
-                    <i class=""><img src="{{ asset('img/001-facebook.png') }}" alt=""></i>
+                    <i class=""><img src="{{ asset('img/001-facebook.png') }}" alt="" class="w-10 h-10"></i>
                 </a>
                 <a href="#" class="text-gray-400 hover:text-white text-2xl">
-                    <i class=""><img src="{{ asset('img/002-twitter.png') }}" alt=""></i>
+                    <i class=""><img src="{{ asset('img/002-twitter.png') }}" alt="" class="w-10 h-10"></i>
                 </a>
             </div>
         </div>
