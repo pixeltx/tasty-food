@@ -112,39 +112,20 @@
     
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Big News Card -->
-                <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col max-h-[700px]">
-                    <img src="{{ asset('img/fathul-abrar-T-qI_MI2EMA-unsplash.jpg') }}" alt="News 1" class="w-full h-96 object-cover">
-                    <div class="p-6 flex flex-col flex-grow justify-between">
-                        <div>
-                            <h3 class="font-semibold text-2xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, tenetur amet eaque placeat expedita veniam!</h3>
-                            <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur nobis accusantium, beatae voluptas, voluptates dolores velit, quis quod pariatur veniam sint id dicta blanditiis enim. Vel consequuntur deserunt provident.</p>
-                        </div>
-    
-                        <div class="flex items-center mt-6 space-x-4 justify-between">
-                            <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                            <a href="/news" class="flex space-x-2">
-                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                                <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Right Side: 4 Small News Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    @foreach ([2, 3, 4, 5] as $i)
-                    <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col max-h-[450px]">
-                        <img src="{{ asset("img/news-$i.jpg") }}" alt="News {{ $i }}" class="w-full h-40 object-cover">
-                        <div class="p-4 flex flex-col flex-grow justify-between">
+                @if ($blogs->isNotEmpty())
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[700px] max-h-[700px]">
+                        <img src="{{ asset('storage/' . $blogs->first()->image) }}" alt="{{ $blogs->first()->title }}" class="w-full h-96 object-cover">
+                        <div class="p-6 flex flex-col flex-grow justify-between">
                             <div>
-                                <h3 class="font-semibold text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                                <p class="text-gray-600 text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                <h3 class="font-semibold text-2xl">{{ $blogs->first()->title }}</h3>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    {!! Str::limit(preg_replace('/<(hr|u)[^>]*>/', '', $blogs->first()->content), 150) !!}
+                                </p>
                             </div>
     
-                            <div class="flex items-center mt-4 space-x-4 justify-between">
-                                <a href="#" class="text-yellow-300 font-bold">Baca selengkapnya</a>
-                                <a href="/news" class="flex space-x-2">
+                            <div class="flex items-center mt-6 space-x-4 justify-between">
+                                <a href="#" class="text-yellow-300 font-bold no-underline">Baca selengkapnya</a>
+                                <a href="/blog" class="flex space-x-2">
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
                                     <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
@@ -152,6 +133,31 @@
                             </div>
                         </div>
                     </div>
+                @endif
+    
+                <!-- Right Side: 4 Small News Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    @foreach ($blogs->skip(1) as $blog)
+                        <div class="bg-white shadow-md rounded-lg overflow-hidden flex flex-col min-h-[350px] max-h-[350px]">
+                            <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->title }}" class="w-full h-40 object-cover">
+                            <div class="p-4 flex flex-col flex-grow justify-between">
+                                <div>
+                                    <h3 class="font-semibold text-lg">{{ $blog->title }}</h3>
+                                    <p class="text-gray-600 text-sm mt-2">
+                                        {!! Str::limit(preg_replace('/<(hr|u)[^>]*>/', '', $blog->content), 75) !!}
+                                    </p>
+                                </div>
+    
+                                <div class="flex items-center mt-4 space-x-4 justify-between">
+                                    <a href="#" class="text-yellow-300 font-bold no-underline">Baca selengkapnya</a>
+                                    <a href="/blog" class="flex space-x-2">
+                                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -163,26 +169,13 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-6">Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/brooke-lark-oaz0raysASk-unsplash.jpg') }}" alt="Gallery Image 1" class="w-full h-64 object-cover">
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/ella-olsson-mmnKI8kMxpc-unsplash.jpg') }}" alt="Gallery Image 2" class="w-full h-64 object-cover">
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/eiliv-aceron-ZuIDLSz3XLg-unsplash.jpg') }}" alt="Gallery Image 3" class="w-full h-64 object-cover">
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/jonathan-borba-Gkc_xM3VY34-unsplash.jpg') }}" alt="Gallery Image 4" class="w-full h-64 object-cover">
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/mariana-medvedeva-iNwCO9ycBlc-unsplash.jpg') }}" alt="Gallery Image 5" class="w-full h-64 object-cover">
-                </div>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                    <img src="{{ asset('img/monika-grabkowska-P1aohbiT-EY-unsplash.jpg') }}" alt="Gallery Image 6" class="w-full h-64 object-cover">
-                </div>
+                @foreach ($galleries as $gallery)
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img src="{{ asset('storage/' . $gallery->image) }}" alt="Gallery Image" class="w-full h-64 object-cover">
+                    </div>
+                @endforeach
             </div>
-    
+
             <button class="bg-black py-2 px-12 my-12 block mx-auto text-white hover:bg-gray-800">
                 LIHAT LEBIH BANYAK
             </button>
