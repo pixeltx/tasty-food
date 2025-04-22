@@ -58,10 +58,10 @@
   <!-- Other News -->
   <section class="py-16 px-4 md:px-20">
     <h2 class="text-2xl font-bold mb-10">BERITA LAINNYA</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="blog-grid">
       <!-- Card -->
-      @foreach ($blogs as $blog)
-        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      @foreach ($blogs->take(8) as $blog) <!-- Only show the first 8 items initially -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden blog-item">
           <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-40 object-cover" />
           <div class="p-4">
             <h3 class="font-bold text-lg mb-1">{{ $blog->title }}</h3>
@@ -91,9 +91,9 @@
       const blogGrid = document.getElementById('blog-grid');
       let loadedItems = 8; // Start with 8 blogs
       const blogs = @json($blogs->all()); // Pass all the blog data to JavaScript
-  
+    
       loadMoreBtn.addEventListener('click', function () {
-        // Load next 8 blogs
+        // Load next 8 blogs (start from the next set of blogs)
         const nextItems = blogs.slice(loadedItems, loadedItems + 8);
         
         nextItems.forEach(blog => {
@@ -116,16 +116,16 @@
           `;
           blogGrid.appendChild(blogItem);
         });
-  
+    
         // Update the loadedItems count
         loadedItems += 8;
-  
+    
         // Hide the button if no more items to load
         if (loadedItems >= blogs.length) {
           loadMoreBtn.style.display = 'none';
         }
       });
-  
+    
       // Hide the button if all items are already loaded
       if (loadedItems >= blogs.length) {
         loadMoreBtn.style.display = 'none';

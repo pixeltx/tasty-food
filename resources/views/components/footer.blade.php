@@ -37,11 +37,11 @@
         <!-- Right Section -->
         <div class="flex text-white flex-col space-y-2">
             <h3 class="text-lg font-semibold">Contact Info</h3>
-            <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
+            <a href="mailto:tastyfood@gmail.com" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 66.png') }}" alt="" class="w-10 h-10">
                 <p class="">tastyfood@gmail.com</p>
             </a>
-            <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
+            <a href="tel:+6281234567890" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
                 <p class="">+62 812 3456 7890</p>
             </a>

@@ -45,7 +45,7 @@
                 <p class="mt-4 sm:mt-6 text-sm sm:text-base lg:text-lg text-gray-600">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ornare, augue eu rutrum commodo.
                 </p>
-                <button class="mt-6 sm:mt-8 px-10 sm:px-14 lg:px-16 xl:px-20 py-2 sm:py-3 lg:py-4 bg-black text-white text-sm sm:text-base lg:text-lg font-semibold">TENTANG KAMI</button>
+                <button onclick="window.location.href='{{ route('about') }}'" class="mt-6 sm:mt-8 px-10 sm:px-14 lg:px-16 xl:px-20 py-2 sm:py-3 lg:py-4 bg-black text-white text-sm sm:text-base lg:text-lg font-semibold">TENTANG KAMI</button>
             </div>
         
             <!-- Right Section: Image -->
@@ -199,7 +199,7 @@
             </button>
         </div>
     </section>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const items = document.querySelectorAll('.gallery-item');
