@@ -3,7 +3,7 @@
     <nav class="absolute top-10 left-0 w-full z-50 py-6 px-12">
         <div class="container mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
+            <a href="{{ route('home') }}" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
     
             <!-- Desktop Menu (Aligned Right) -->
             <ul class="hidden md:flex space-x-14 text-xl ml-auto">

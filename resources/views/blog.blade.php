@@ -3,7 +3,7 @@
     <nav class="absolute top-10 left-0 w-full z-50 py-6 px-12">
         <div class="container mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
+            <a href="{{ route('home') }}" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
     
             <!-- Desktop Menu (Aligned Right) -->
             <ul class="hidden md:flex space-x-14 text-xl ml-auto">
@@ -60,78 +60,76 @@
     <h2 class="text-2xl font-bold mb-10">BERITA LAINNYA</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
       <!-- Card -->
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
+      @foreach ($blogs as $blog)
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <img src="{{ asset('storage/' . $blog->image) }}" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-1">{{ $blog->title }}</h3>
+            <p class="text-sm text-gray-600 mb-4">{!! Str::limit(preg_replace('/<(hr|u)[^>]*>/', '', $blog->content), 10) !!}</p>
+            <div class="flex items-center mt-3 sm:mt-4 space-x-4 justify-between">
+              <a href="{{ route('blog.show', $blog->slug) }}" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
+              <a href="{{ route('blog.show', $blog->slug) }}" class="flex space-x-2">
+                  <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                  <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                  <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-      
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="{{ asset('img/sanket-shah-SVA7TyHxojY-unsplash.jpg') }}" class="w-full h-40 object-cover" />
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">LOREM IPSUM</h3>
-          <p class="text-sm text-gray-600 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <a href="#" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
-        </div>
-      </div>
-
+      @endforeach
     </div>
+
+    <!-- Load More Button -->
+    <button id="load-more-btn" class="bg-black py-2 px-8 sm:px-10 lg:px-12 my-6 sm:my-8 lg:my-10 xl:my-12 block mx-auto text-white hover:bg-gray-800 text-xs sm:text-sm lg:text-base">
+      LIHAT LEBIH BANYAK
+    </button>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loadMoreBtn = document.getElementById('load-more-btn');
+      const blogGrid = document.getElementById('blog-grid');
+      let loadedItems = 8; // Start with 8 blogs
+      const blogs = @json($blogs->all()); // Pass all the blog data to JavaScript
+  
+      loadMoreBtn.addEventListener('click', function () {
+        // Load next 8 blogs
+        const nextItems = blogs.slice(loadedItems, loadedItems + 8);
+        
+        nextItems.forEach(blog => {
+          const blogItem = document.createElement('div');
+          blogItem.classList.add('bg-white', 'rounded-xl', 'shadow-md', 'overflow-hidden', 'blog-item');
+          blogItem.innerHTML = `
+            <img src="/storage/${blog.image}" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">${blog.title}</h3>
+              <p class="text-sm text-gray-600 mb-4">${blog.content.substring(0, 100)}...</p>
+              <div class="flex items-center mt-3 sm:mt-4 space-x-4 justify-between">
+                <a href="/blog/${blog.slug}" class="text-yellow-500 text-sm font-semibold">Baca selengkapnya</a>
+                <a href="/blog/${blog.slug}" class="flex space-x-2">
+                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                    <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                </a>
+              </div>
+            </div>
+          `;
+          blogGrid.appendChild(blogItem);
+        });
+  
+        // Update the loadedItems count
+        loadedItems += 8;
+  
+        // Hide the button if no more items to load
+        if (loadedItems >= blogs.length) {
+          loadMoreBtn.style.display = 'none';
+        }
+      });
+  
+      // Hide the button if all items are already loaded
+      if (loadedItems >= blogs.length) {
+        loadMoreBtn.style.display = 'none';
+      }
+    });
+  </script>
 </x-app>

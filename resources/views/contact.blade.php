@@ -3,7 +3,7 @@
     <nav class="absolute top-10 left-0 w-full z-50 py-6 px-12">
         <div class="container mx-auto flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
+            <a href="{{ route('home') }}" class="text-3xl font-extrabold text-white">TASTY FOOD</a>
     
             <!-- Desktop Menu (Aligned Right) -->
             <ul class="hidden md:flex space-x-14 text-xl ml-auto">
@@ -45,18 +45,18 @@
     <!-- Contact Form -->
     <section class="px-6 md:px-20 py-16">
         <h2 class="text-2xl md:text-3xl font-bold mb-8">KONTAK KAMI</h2>
-        <form class="grid md:grid-cols-2 gap-4">
-          
+        <form action="{{ route('contact.send') }}" method="POST" class="grid md:grid-cols-2 gap-4">
+          @csrf
           <!-- Left Column: Subject, Name, Email -->
           <div class="flex flex-col space-y-4">
-            <input type="text" placeholder="Subject" class="border rounded-lg p-4 w-full" />
-            <input type="text" placeholder="Name" class="border rounded-lg p-4 w-full" />
-            <input type="email" placeholder="Email" class="border rounded-lg p-4 w-full" />
+            <input type="text" name="subject" placeholder="Subject" class="border rounded-lg p-4 w-full" />
+            <input type="text" name="name" placeholder="Name" class="border rounded-lg p-4 w-full" />
+            <input type="email" name="email" placeholder="Email" class="border rounded-lg p-4 w-full" />
           </div>
       
           <!-- Right Column: Message -->
           <div>
-            <textarea placeholder="Message" class="border rounded-lg p-4 w-full h-full min-h-[184px] md:h-[205px]"></textarea>
+            <textarea placeholder="Message" name="message" class="border rounded-lg p-4 w-full h-full min-h-[184px] md:h-[205px]"></textarea>
           </div>
       
           <!-- Full width Button under both columns -->
@@ -70,7 +70,7 @@
     <section class="flex flex-col md:flex-row items-center justify-center text-center px-6 md:px-20 py-10 gap-10 md:gap-40">
         <!-- EMAIL -->
         <div class="space-y-3">
-            <a href="#">
+            <a href="mailto:tastyfood@gmail.com">
                 <img src="{{ asset('img/Group 66.png') }}" alt="Email Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">EMAIL</h4>
@@ -79,7 +79,7 @@
     
         <!-- PHONE -->
         <div class="space-y-3">
-            <a href="#">
+            <a href="tel:+6281234567890">
                 <img src="{{ asset('img/Group 67.png') }}" alt="Phone Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">PHONE</h4>
