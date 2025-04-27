@@ -70,20 +70,20 @@
     <section class="flex flex-col md:flex-row items-center justify-center text-center px-6 md:px-20 py-10 gap-10 md:gap-40">
         <!-- EMAIL -->
         <div class="space-y-3">
-            <a href="mailto:tastyfood@gmail.com">
+            <a href="mailto:{{ $settings['email'] }}">
                 <img src="{{ asset('img/Group 66.png') }}" alt="Email Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">EMAIL</h4>
-            <p class="text-base">tastyfood@gmail.com</p>
+            <p class="text-base">{{ $settings['email'] }}</p>
         </div>
     
         <!-- PHONE -->
         <div class="space-y-3">
-            <a href="tel:+6281234567890">
+            <a href="tel:{{ $settings['phone'] }}">
                 <img src="{{ asset('img/Group 67.png') }}" alt="Phone Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">PHONE</h4>
-            <p class="text-base">+62 812 3456 7890</p>
+            <p class="text-base">{{ $settings['phone'] }}</p>
         </div>
     
         <!-- LOCATION -->
@@ -92,18 +92,22 @@
                 <img src="{{ asset('img/Group 68.png') }}" alt="Location Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">LOCATION</h4>
-            <p class="text-base">Kota Bandung, Jawa Barat</p>
+            <p class="text-base">{{ Str::limit($location->address, 20, '...') }}</p>
         </div>
     </section>
     
     <!-- Google Maps Embed -->
     <section class="px-6 md:px-20 pb-20">
         <div class="rounded-xl overflow-hidden">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63374.79624054482!2d107.58003892483966!3d-6.903449608997443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7b60eb37f65%3A0x401e8f1fc28b8b0!2sBandung%2C%20Kota%20Bandung%2C%20Jawa%20Barat!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
-            width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-            class="w-full h-[400px] border-0">
-        </iframe>
+            @if ($location)
+            <iframe
+                src="https://www.google.com/maps?q={{ $location->latitude }},{{ $location->longitude }}&hl=id&z=14&output=embed"
+                width="100%" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-[400px] border-0">
+            </iframe>
+            @else
+                <p class="text-center text-gray-500">Location data is not available.</p>
+            @endif
         </div>
     </section>
 </x-app>

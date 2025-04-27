@@ -1,3 +1,5 @@
+@props(['location', 'settings'])
+
 <footer class="bg-zinc-900 text-white py-10">
     <div class="max-w-7xl mx-auto px-4 pt-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Left Section -->
@@ -19,9 +21,9 @@
         <!-- Middle left Section -->
         <div class="flex text-white flex-col space-y-2">
             <h3 class="text-lg font-semibold">Useful Links</h3>
-            <a href="#" class="hover:text-gray-100">Blog</a>
+            <a href="/blog" class="hover:text-gray-100">Blog</a>
             <a href="#" class="hover:text-gray-100">Hewan</a>
-            <a href="#" class="hover:text-gray-100">Galeri</a>
+            <a href="/gallery" class="hover:text-gray-100">Galeri</a>
             <a href="#" class="hover:text-gray-100">Testimonial</a>
         </div>
 
@@ -29,25 +31,25 @@
         <div class="flex text-white flex-col space-y-2">
             <h3 class="text-lg font-semibold">Privacy</h3>
             <a href="#" class="hover:text-gray-100">Karir</a>
-            <a href="#" class="hover:text-gray-100">Tentang Kami</a>
-            <a href="#" class="hover:text-gray-100">Kontak Kami</a>
+            <a href="/about" class="hover:text-gray-100">Tentang Kami</a>
+            <a href="/contact" class="hover:text-gray-100">Kontak Kami</a>
             <a href="#" class="hover:text-gray-100">Servis</a>
         </div>
 
         <!-- Right Section -->
         <div class="flex text-white flex-col space-y-2">
             <h3 class="text-lg font-semibold">Contact Info</h3>
-            <a href="mailto:tastyfood@gmail.com" class="hover:text-gray-100 flex items-center space-x-2">
+            <a href="mailto:{{ $settings['email'] }}" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 66.png') }}" alt="" class="w-10 h-10">
-                <p class="">tastyfood@gmail.com</p>
+                <p class="">{{ $settings['email'] ?? 'No Email Available'}}</p>
             </a>
-            <a href="tel:+6281234567890" class="hover:text-gray-100 flex items-center space-x-2">
+            <a href="tel:{{ $settings['phone'] }}" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
-                <p class="">+62 812 3456 7890</p>
+                <p class="">{{ $settings['phone'] ?? 'No Phone Number Available'}}</p>
             </a>
             <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 68.png') }}" alt="" class="w-10 h-10">
-                <p class="">Kota Bandung, Jawa Barat</p>
+                <p class="">{{ Str::limit($location->address, 20, '...') ?? 'No Location Available'}}</p>
             </a>
         </div>
     </div>

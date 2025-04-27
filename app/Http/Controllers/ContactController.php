@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ContactMessage;
+use App\Models\Location;
+use App\Models\Setting;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        $location = Location::first();
+        $settings = Setting::all()->pluck('value', 'key');
+        return view('contact', compact('location', 'settings'));
+    }
+
     public function send(Request $request)
     {
         $validatedData = $request->validate([

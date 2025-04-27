@@ -26,7 +26,19 @@ class ContactMessageResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('subject')
+                    ->label('Subject')
+                    ->disabled(),
+                Forms\Components\TextInput::make('name')
+                    ->label('Name')
+                    ->disabled(),
+                Forms\Components\TextInput::make('email')
+                    ->label('Email')
+                    ->email()
+                    ->disabled(),
+                Forms\Components\Textarea::make('message')
+                    ->label('Message')
+                    ->disabled(),
             ]);
     }
 
@@ -58,6 +70,8 @@ class ContactMessageResource extends Resource
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
