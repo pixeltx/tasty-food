@@ -47,7 +47,7 @@
                 <img src="{{ asset('img/Group 67.png') }}" alt="" class="w-10 h-10">
                 <p class="">{{ $settings['phone'] ?? 'No Phone Number Available'}}</p>
             </a>
-            <a href="#" class="hover:text-gray-100 flex items-center space-x-2">
+            <a href="https://www.google.com/maps?q={{ $location->latitude }},{{ $location->longitude }}" target="_blank" class="hover:text-gray-100 flex items-center space-x-2">
                 <img src="{{ asset('img/Group 68.png') }}" alt="" class="w-10 h-10">
                 <p class="">{{ Str::limit($location->address, 20, '...') ?? 'No Location Available'}}</p>
             </a>

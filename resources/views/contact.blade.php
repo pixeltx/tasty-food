@@ -16,20 +16,20 @@
     
             <!-- Mobile Menu Button -->
             <button id="menu-toggle" class="md:hidden focus:outline-none ml-auto">
-                <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
     
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="absolute right-0 top-20 w-full bg-white hidden md:hidden shadow-md">
+            <div id="mobile-menu" class="absolute right-0 top-20 w-full bg-gray-800 text-white hidden md:hidden shadow-md">
                 <ul class="flex flex-col space-y-4 p-6">
-                    <li><a href="/" class="text-gray-700 hover:text-black font-semibold">HOME</a></li>
-                    <li><a href="/about" class="text-gray-700 hover:text-black font-semibold">TENTANG</a></li>
-                    <li><a href="/blog" class="text-gray-700 hover:text-black font-semibold">BERITA</a></li>
-                    <li><a href="/gallery" class="text-gray-700 hover:text-black font-semibold">GALERI</a></li>
-                    <li><a href="/contact" class="text-gray-700 hover:text-black font-semibold">KONTAK</a></li>
+                    <li><a href="/" class="hover:text-gray-200 font-semibold">HOME</a></li>
+                    <li><a href="/about" class="hover:text-gray-200 font-semibold">TENTANG</a></li>
+                    <li><a href="/blog" class="hover:text-gray-200 font-semibold">BERITA</a></li>
+                    <li><a href="/gallery" class="hover:text-gray-200 font-semibold">GALERI</a></li>
+                    <li><a href="/contact" class="hover:text-gray-200 font-semibold">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -88,11 +88,13 @@
     
         <!-- LOCATION -->
         <div class="space-y-3">
-            <a href="#">
+            <a href="https://www.google.com/maps?q={{ $location->latitude }},{{ $location->longitude }}" target="_blank">
                 <img src="{{ asset('img/Group 68.png') }}" alt="Location Icon" class="mx-auto w-16 h-16">
             </a>
             <h4 class="font-semibold text-lg">LOCATION</h4>
-            <p class="text-base">{{ Str::limit($location->address, 20, '...') }}</p>
+            <p class="text-base">
+                {{ Str::limit($location->address, 20, '...') }}
+            </p>
         </div>
     </section>
     

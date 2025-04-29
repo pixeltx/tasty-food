@@ -15,20 +15,20 @@
     
             <!-- Mobile Menu Button -->
             <button id="menu-toggle" class="md:hidden focus:outline-none">
-                <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
+                <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gray-700" fill="none" stroke="currentColor" stroke-width="2"
                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
     
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="absolute right-0 top-16 w-full bg-white hidden md:hidden shadow-md">
-                <ul class="flex flex-col space-y-4 p-6">
-                    <li><a href="{{ route('home') }}" class="text-gray-700 hover:text-black font-semibold">Home</a></li>
-                    <li><a href="{{ route('about') }}" class="text-gray-700 hover:text-black font-semibold">About</a></li>
-                    <li><a href="{{ route('blog') }}" class="text-gray-700 hover:text-black font-semibold">Blog</a></li>
-                    <li><a href="{{ route('gallery') }}" class="text-gray-700 hover:text-black font-semibold">Gallery</a></li>
-                    <li><a href="{{ route('contact') }}" class="text-gray-700 hover:text-black font-semibold">Contact</a></li>
+            <div id="mobile-menu" class="absolute left-0 top-full w-full bg-white hidden lg:hidden shadow-md">
+                <ul class="flex flex-col space-y-2 sm:space-y-3 p-4 sm:p-5">
+                    <li><a href="/" class="block py-2 sm:py-3 px-4 text-gray-700 hover:text-black font-semibold text-sm sm:text-base">HOME</a></li>
+                    <li><a href="/about" class="block py-2 sm:py-3 px-4 text-gray-700 hover:text-black font-semibold text-sm sm:text-base">TENTANG</a></li>
+                    <li><a href="/blog" class="block py-2 sm:py-3 px-4 text-gray-700 hover:text-black font-semibold text-sm sm:text-base">BERITA</a></li>
+                    <li><a href="/gallery" class="block py-2 sm:py-3 px-4 text-gray-700 hover:text-black font-semibold text-sm sm:text-base">GALERI</a></li>
+                    <li><a href="/contact" class="block py-2 sm:py-3 px-4 text-gray-700 hover:text-black font-semibold text-sm sm:text-base">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -60,11 +60,4 @@
             </div>
         </div>
     </section>
-
-    <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
 </x-app>
